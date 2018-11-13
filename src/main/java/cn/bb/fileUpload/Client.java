@@ -28,6 +28,7 @@ public class Client {
 		printWriter.write(stringBuffer.toString());
 		printWriter.flush();
 		
+		
 		printWriter.close();
 		outputStream.close();
 		socket.close();

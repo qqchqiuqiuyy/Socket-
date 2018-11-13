@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.Buffer;
@@ -30,17 +32,24 @@ public class Server {
 			while((info = bufferedReader.readLine()) != null){
 				System.err.println("我是服务器,客户端说:" + info);
 			}
+			//关闭输入流
+			socket.shutdownInput();
+			//4.获取输出流 响应客户端请求
+			OutputStream outputStream = socket.getOutputStream();
+			PrintWriter pWriter = new PrintWriter(outputStream);//包装成打印流
+			pWriter.write("欢饮您");
+			pWriter.flush();
 			
-			//关闭
-			socket.close();
+			//5.关闭
+			pWriter.close();
+			outputStream.close();
 			bufferedReader.close();
 			inputStreamReader.close();
 			iStream.close();
+			socket.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
-		
 		}
 		
 	}

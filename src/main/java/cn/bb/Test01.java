@@ -2,7 +2,9 @@ package cn.bb;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
+/*
+ * InetAddress shi yong
+ */
 public class Test01 {
 	public static void main(String[] args) throws UnknownHostException {
 		//get InetAddress实例

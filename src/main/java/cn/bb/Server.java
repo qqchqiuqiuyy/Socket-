@@ -39,7 +39,7 @@ public class Server {
 			PrintWriter pWriter = new PrintWriter(outputStream);//包装成打印流
 			pWriter.write("欢饮您");
 			pWriter.flush();
-			
+			System.err.println("test");
 			//5.关闭
 			pWriter.close();
 			outputStream.close();

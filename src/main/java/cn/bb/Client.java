@@ -23,7 +23,7 @@ public class Client {
 			OutputStream outputStream = socket.getOutputStream();
 			//包装成打印流
 			PrintWriter printWriter = new PrintWriter(outputStream);
-			printWriter.write("用户名: admin;密码: 123");
+			printWriter.write("用户名: root;密码: 123");
 			printWriter.flush();
 			//关闭输出流
 			socket.shutdownOutput();
